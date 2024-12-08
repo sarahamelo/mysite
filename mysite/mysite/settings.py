@@ -1,7 +1,10 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+TEMPLATES_DIRS = os.path.join(BASE_DIR, "templates")
 
 SECRET_KEY = 'django-insecure-wi(0o#d)xl+!m=_nem0o+0!c4dj3@s&-4y1rr53ez6%&fz7yro'
 
@@ -38,7 +41,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIRS],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
